@@ -8,7 +8,10 @@ use Illuminate\Support\Facades\DB;
 class FristController extends Controller
 {
     public function index(){
-        echo "my first controller";
+
+        $hello = ["hello" => "Welcome to Laravel Tutorial"];
+
+        return view("mypage", $hello);
     }
 
     public function tetstt(){

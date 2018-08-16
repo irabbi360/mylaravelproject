@@ -12,7 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $myproject = ["name" => "My Laravel Project"];
+
+    return view('welcome', $myproject);
 });
 
 
