@@ -33,3 +33,9 @@ Route::get('hii','FristController@tetstt');
 Route::resource('data','SecondController');
 
 Route::get('dbcheck', 'FristController@dbConn');
+
+
+Route::get('version', function (){
+
+})->middleware(\App\Http\Middleware\VersionCheck::class);
+
