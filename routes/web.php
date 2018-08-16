@@ -39,3 +39,7 @@ Route::get('version', function (){
 
 })->middleware(\App\Http\Middleware\VersionCheck::class);
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
