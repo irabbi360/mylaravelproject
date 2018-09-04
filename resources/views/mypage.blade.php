@@ -69,10 +69,15 @@
 
 
             <div class="content">
-                <div class="title m-b-md">
+                {{--<div class="title m-b-md">
                    <?php echo $hello ?>
-                </div>
+                </div>--}}
 
+                <form method="post" action="{{ url('postrequest') }}">
+                    @csrf
+                    <input type="text" name="title">
+                    <input type="submit">
+                </form>
                 
             </div>
         </div>

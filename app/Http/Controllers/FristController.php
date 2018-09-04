@@ -27,4 +27,15 @@ class FristController extends Controller
             die("Could not connect to the database.  Please check your configuration. error:" . $e );
         }
     }
+
+    public function getRequest(Request $request)
+    {
+        //print_r($request->all());
+
+        print_r($request->input('name'));
+    }
+
+    public function postRequest(Request $request){
+        print_r($request->input('title'));
+    }
 }
