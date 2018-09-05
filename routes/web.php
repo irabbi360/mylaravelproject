@@ -50,3 +50,4 @@ Route::post('postrequest', 'FristController@postRequest');
 Route::get('studentlist', 'FristController@getStudentList');
 Route::get('editinfo/{id}', 'FristController@edit');
 Route::post('update/{id}', 'FristController@update');
+Route::delete('delete/{id}', 'FristController@delete');

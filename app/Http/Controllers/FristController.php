@@ -75,4 +75,10 @@ class FristController extends Controller
 
         return redirect()->back()->with('message', 'Updated successfully');
     }
+
+    public function delete($id)
+    {
+        Student::where('id', $id)->delete();
+        return redirect()->back();
+    }
 }
