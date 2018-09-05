@@ -48,3 +48,5 @@ Route::get('getrequest', 'FristController@getRequest');
 Route::post('postrequest', 'FristController@postRequest');
 
 Route::get('studentlist', 'FristController@getStudentList');
+Route::get('editinfo/{id}', 'FristController@edit');
+Route::post('update/{id}', 'FristController@update');

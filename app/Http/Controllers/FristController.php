@@ -58,4 +58,21 @@ class FristController extends Controller
         //dd($student);
         return view('studentlist', compact('students'));
     }
+
+    public function edit($id)
+    {
+        $student = Student::find($id);
+        return view('edit', compact('student'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $student = Student::find($id);
+        $student->name = $request->input('name');
+        $student->email = $request->input('email');
+
+        $student->save();
+
+        return redirect()->back()->with('message', 'Updated successfully');
+    }
 }
