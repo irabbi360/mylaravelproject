@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -35,7 +36,15 @@ class FristController extends Controller
         print_r($request->input('name'));
     }
 
-    public function postRequest(Request $request){
-        print_r($request->input('title'));
+    public function postRequest(Request $request)
+    {
+        //dd($request->all());
+        $student = new Student();
+        $student->name = $request->input('name');
+        $student->email = $request->input('email');
+
+        $student->save();
+
+        return redirect()->back();
     }
 }

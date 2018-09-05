@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
 
-    $myproject = ["name" => "My Laravel Project"];
+    $myproject = ["name" => "Tech Bangla School"];
 
     return view('welcome', $myproject);
 });

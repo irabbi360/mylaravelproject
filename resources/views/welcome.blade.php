@@ -78,7 +78,7 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
+                <div class="title m-b-md" style="color: red; font-weight: bold">
                     <?php echo $name ?>
                 </div>
 
