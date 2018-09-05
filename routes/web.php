@@ -46,3 +46,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('getrequest', 'FristController@getRequest');
 Route::post('postrequest', 'FristController@postRequest');
+
+Route::get('studentlist', 'FristController@getStudentList');

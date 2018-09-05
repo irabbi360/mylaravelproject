@@ -51,4 +51,11 @@ class FristController extends Controller
 
         return redirect()->back()->with('message', 'Student information saved');
     }
+
+    public function getStudentList()
+    {
+        $students = DB::table('students')->get();
+        //dd($student);
+        return view('studentlist', compact('students'));
+    }
 }
