@@ -38,6 +38,10 @@ class FristController extends Controller
 
     public function postRequest(Request $request)
     {
+        $this->validate($request,[
+            'name' => 'required',
+            'email' => 'required|unique:students'
+        ]);
         //dd($request->all());
         $student = new Student();
         $student->name = $request->input('name');
@@ -45,6 +49,6 @@ class FristController extends Controller
 
         $student->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Student information saved');
     }
 }

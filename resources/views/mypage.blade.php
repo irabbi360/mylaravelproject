@@ -18,14 +18,26 @@
 
             <div class="content">
                 <h2>Student Information</h2>
-
+                @if(Session::has('message'))
+                    <p>{{ Session::get('message') }}</p>
+                @endif
                 <form action="{{ url('postrequest') }}" method="post">
                     @csrf
                     Name:<br>
-                    <input type="text" name="name" value="">
+                    <input type="text" name="name" value="" class="{{ $errors->has('name') ? ' is-invalid' : '' }}">
+                    @if ($errors->has('name'))
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                    @endif
                     <br>
                     Email:<br>
-                    <input type="text" name="email" value="">
+                    <input type="text" name="email" value="" class="{{ $errors->has('email') ? ' is-invalid' : '' }}">
+                    @if ($errors->has('email'))
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                    @endif
                     <br><br>
                     <input type="submit" value="Submit">
                 </form>
