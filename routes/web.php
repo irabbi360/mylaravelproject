@@ -11,11 +11,21 @@
 |
 */
 
+use Alaouy\Youtube\Facades\Youtube;
+
 Route::get('/', function () {
 
-    $myproject = ["name" => "Tech Bangla School"];
+    $videoLists = Youtube::listChannelVideos('UCxS6I9XUhRxMlfjEtEg_8aw', 40);
+//dd($videoList);
+    //$myproject = ["name" => "Tech Bangla School"];
 
-    return view('welcome', $myproject);
+    return view('ytvdo', compact('videoLists'));
+});
+Route::get('yt', function () {
+
+    $channel = Youtube::getChannelById('UCxS6I9XUhRxMlfjEtEg_8aw');;
+dd($channel);
+
 });
 
 
