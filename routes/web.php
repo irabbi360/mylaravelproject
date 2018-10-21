@@ -11,53 +11,20 @@
 |
 */
 
-use Alaouy\Youtube\Facades\Youtube;
-
-Route::get('/', function () {
-
-    $videoLists = Youtube::listChannelVideos('UCxS6I9XUhRxMlfjEtEg_8aw', 40);
-//dd($videoList);
-    //$myproject = ["name" => "Tech Bangla School"];
-
-    return view('ytvdo', compact('videoLists'));
-});
-Route::get('yt', function () {
-
-    $channel = Youtube::getChannelById('UCxS6I9XUhRxMlfjEtEg_8aw');;
-dd($channel);
-
-});
-
-
-Route::get('/test', function () {
-    return 'This my test page';
-});
-
-Route::get('/page', function () {
-    return view('mypage');
-});
-
-Route::get('my','FristController@index');
-Route::get('hii','FristController@tetstt');
-
-Route::resource('data','SecondController');
-
-Route::get('dbcheck', 'FristController@dbConn');
-
-
-Route::get('version', function (){
-
-})->middleware(\App\Http\Middleware\VersionCheck::class);
-
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('getrequest', 'FristController@getRequest');
-Route::post('postrequest', 'FristController@postRequest');
+Route::get('/','StudentController@sessionTut');
+Route::get('getsession','StudentController@getSessionData');
+Route::get('set-session','StudentController@storeSessionData');
+Route::get('deleteSessionData','StudentController@deleteSessionData');
 
-Route::get('studentlist', 'FristController@getStudentList');
-Route::get('editinfo/{id}', 'FristController@edit');
-Route::post('update/{id}', 'FristController@update');
-Route::delete('delete/{id}', 'FristController@delete');
+
+Route::get('students','StudentController@index');
+Route::get('create','StudentController@create');
+Route::post('store','StudentController@store');
+Route::get('show/{id}','StudentController@show');
+Route::get('edit/{id}','StudentController@edit');
+Route::post('update/{id}','StudentController@update');
+Route::delete('delete/{id}','StudentController@delete');
