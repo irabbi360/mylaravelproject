@@ -25,6 +25,9 @@ Route::get('getCookie','StudentController@getCookie');
 //cache
 Route::get('setCache','StudentController@setCache');
 Route::get('getCache','StudentController@getCache');
+//file copy move delete
+Route::get('filecopy','StudentController@copyMoveFile');
+Route::get('filedelete','StudentController@deleteFile');
 
 
 Route::get('students','StudentController@index');

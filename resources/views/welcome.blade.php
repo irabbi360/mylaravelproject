@@ -8,8 +8,8 @@
                 <div class="card-header">Laravel Tutorial</div>
 
                 <div class="card-body">
-                    <h1>Cache Tutorial Part 21</h1>
-                    <a href="{{ url('setCache') }}">Set Cache</a> || <a href="{{ url('getCache') }}">Get Cache</a>
+                    <h1>File Copy/Past/Move, Delete Tutorial Part 22</h1>
+                    <a href="{{ url('filecopy') }}">Copy/Move File</a>  ||  <a href="{{ url('filedelete') }}">Delete</a>
                 </div>
             </div>
         </div>

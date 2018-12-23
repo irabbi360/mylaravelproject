@@ -6,6 +6,7 @@ use App\Student;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Storage;
 
 class StudentController extends Controller
 {
@@ -146,4 +147,21 @@ class StudentController extends Controller
 
         return $cache;
     }
+
+    public function copyMoveFile()
+    {
+        \File::copy(storage_path('file.jpg'),base_path('file.jpg'));
+
+        echo 'File successfully copy';
+
+
+        //\Storage::move('old/file.jpg', 'new/file.jpg');
+    }
+
+    public function deleteFile()
+    {
+        \File::delete(base_path('file.jpg'));
+        echo 'File deleted';
+    }
+
 }
