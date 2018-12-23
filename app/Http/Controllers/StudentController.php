@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Student;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class StudentController extends Controller
 {
@@ -113,5 +114,17 @@ class StudentController extends Controller
     {
         $request->session()->forget('my_name');
         echo "Data has been removed from session.";
+    }
+
+    public function setCookie(Request $request) {
+        //$minutes = 1;
+        $response = new Response('Cookie set successfully');
+        $response->withCookie(cookie('name', 'Fazle Rabbi'));
+        return $response;
+    }
+
+    public function getCookie(Request $request) {
+        $value = $request->cookie('name');
+        echo $value;
     }
 }
