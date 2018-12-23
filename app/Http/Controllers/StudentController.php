@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Student;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Cache;
 
 class StudentController extends Controller
 {
@@ -126,5 +127,23 @@ class StudentController extends Controller
     public function getCookie(Request $request) {
         $value = $request->cookie('name');
         echo $value;
+    }
+
+    public function setCache()
+    {
+        Cache::put('welcome', 'Welcome to laravel tutorial',10);
+        echo 'Cache successfully set';
+
+        /*Cache::remember('articles', 15, function() {
+            return Article::all();
+        });*/
+    }
+
+    public function getCache()
+    {
+        $cache = Cache::get('welcome');
+        //Cache::forget('welcome');
+
+        return $cache;
     }
 }

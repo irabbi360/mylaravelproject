@@ -8,8 +8,8 @@
                 <div class="card-header">Laravel Tutorial</div>
 
                 <div class="card-body">
-                    <h1>Cookies Tutorial Part 20</h1>
-                    <a href="{{ url('setCookie') }}">Set Cookie</a> || <a href="{{ url('getCookie') }}">Get Cookie</a>
+                    <h1>Cache Tutorial Part 21</h1>
+                    <a href="{{ url('setCache') }}">Set Cache</a> || <a href="{{ url('getCache') }}">Get Cache</a>
                 </div>
             </div>
         </div>

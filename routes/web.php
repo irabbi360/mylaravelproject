@@ -22,6 +22,9 @@ Route::get('deleteSessionData','StudentController@deleteSessionData');
 //coockie
 Route::get('setCookie','StudentController@setCookie');
 Route::get('getCookie','StudentController@getCookie');
+//cache
+Route::get('setCache','StudentController@setCache');
+Route::get('getCache','StudentController@getCache');
 
 
 Route::get('students','StudentController@index');
